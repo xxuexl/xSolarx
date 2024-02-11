@@ -1,10 +1,7 @@
-//Todo acaba en este archivo, ya que es el más relevante.
-// Creamos nuestro servidor express
-
 const express = require("express");
 const dotenv = require("dotenv");
 const { connect } = require("./src/utils/db");
-//!Queda crear el middleware para config Cloudinary para poder importarlo aquí!
+const configCloudinary = require("./src/middleware/files.middleware");
 
 // Creamos el servidor web
 const app = express();
@@ -16,5 +13,3 @@ connect();
 configCloudinary();
 
 const PORT = process.env.PORT;
-
-//?--------------------RUTAS--------------------------------------------------
