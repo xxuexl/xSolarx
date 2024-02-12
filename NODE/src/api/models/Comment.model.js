@@ -1,6 +1,6 @@
 const mongoose = require("mongoose"); // para interactuar con la base de datos de mongodb
 const Schema = mongoose.Schema; //
-
+//! Chequear el valor de ref, creo que tiene que estar en mayúscula la primera letra
 const CommentSchema = new Schema({
   title: {
     type: String,
