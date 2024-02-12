@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const { connect } = require("./src/utils/db");
-const configCloudinary = require("./src/middleware/files.middleware");
+const files = require("./src/middleware/files.middleware");
 
 // Creamos el servidor web
 const app = express();
@@ -10,6 +10,6 @@ dotenv.config();
 // Creamos la conexión con la BD (base de datos)
 connect();
 // Configura Cloudinary para la gestión de Img.
-configCloudinary();
+files.configCloudinary();
 
 const PORT = process.env.PORT;

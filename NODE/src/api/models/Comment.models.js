@@ -16,23 +16,18 @@ const CommentSchema = new Schema({
     type: String,
     required: true,
   },
-  category: {
-    type: String,
-    /*enum: [] */ //! definir las opciones
-    required: true,
-  },
-  recipientForo: {
+  recipientForum: {
     type: mongoose.Schema.Types.ObjectId, //! duda sobre el cochetes al inicio
-    ref: "foro",
+    ref: "Forum",
   },
   recipientCompany: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Company",
   },
   tags: [String], //!! duda
-  recipientForo: {
+  recipientForum: {
     type: mongoose.Schema.Types.ObjectId, //! tags
-    ref: "Foro",
+    ref: "Forum",
   },
   likes: [
     {
