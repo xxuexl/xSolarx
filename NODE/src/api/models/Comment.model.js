@@ -6,48 +6,41 @@ const CommentSchema = new Schema({
     type: String,
     required: true,
   },
-  member: {
+  owner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: "user",
     required: true,
   },
   content: {
-    // cuerpo del comentario
     type: String,
     required: true,
   },
+  recipientNews: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "comments",
+  },
   recipientForum: {
-    type: mongoose.Schema.Types.ObjectId, //! duda sobre el cochetes al inicio
-    ref: "Forum",
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "comments",
   },
   recipientCompany: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Company",
+    ref: "userReviews",
   },
-  tags: [String], //!! duda
+  tags: [String],
   recipientForum: {
-    type: mongoose.Schema.Types.ObjectId, //! tags
-    ref: "Forum",
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "forum",
   },
   likes: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: "user",
     },
   ],
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  thread: {
-    // hilo
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Thread",
-  },
   timestamps: true,
 });
 
-//! cuando hacemos referencias, tenemo que crear un modelo de datos ?
 const Comment = mongoose.model("Comment", CommentSchema);
 
 module.exports = Comment;
