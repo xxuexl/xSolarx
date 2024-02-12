@@ -3,7 +3,6 @@
    "description": "",
    "version": "1.0.0",
    "main": "index.js",
-
    "scripts": {
       "dev": "nodemon index.js",
       "start": "node index.js"
@@ -24,6 +23,8 @@
       "multer-storage-cloudinary": "^4.0.0",
       "node": "^21.6.1",
       "validator": "^13.11.0"
-
+   },
+   "devDependencies": {
+      "nodemon": "^3.0.3"
    }
 }
