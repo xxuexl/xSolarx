@@ -1,6 +1,6 @@
 const mongoose = require("mongoose"); // para interactuar con la base de datos de mongodb
 const Schema = mongoose.Schema; //
-//! Chequear el valor de ref, creo que tiene que estar en mayúscula la primera letra
+
 const CommentSchema = new Schema({
   title: {
     type: String,
@@ -8,7 +8,7 @@ const CommentSchema = new Schema({
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "user",
+    ref: "User",
     required: true,
   },
   content: {
@@ -17,25 +17,25 @@ const CommentSchema = new Schema({
   },
   recipientNews: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "comments",
+    ref: "News",
   },
   recipientForum: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "comments",
+    ref: "Forum",
   },
   recipientCompany: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "userReviews",
+    ref: "Company",
   },
   tags: [String],
   recipientForum: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "forum",
+    ref: "Forum",
   },
   likes: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "user",
+      ref: "User",
     },
   ],
   timestamps: true,
