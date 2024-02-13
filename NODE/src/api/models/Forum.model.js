@@ -17,7 +17,7 @@ const PostSchema = new mongoose.Schema({
     default: Date.now,
   },
   image: {
-    type: string, // Representación binaria de la imagen
+    type: string, // Representación URL
   },
   content: {
     type: String,
@@ -38,7 +38,7 @@ const PostSchema = new mongoose.Schema({
 });
 
 // Modelo del forum que agrupa preguntas
-const Forum = mongoose.model("Forum", preguntaSchema);
+const Forum = mongoose.model("Forum", PostSchemaSchema);
 
 // Middleware para manejar la carga de imágenes en las preguntas
 PostSchema.pre("save", upload.single("image"), function (next) {
