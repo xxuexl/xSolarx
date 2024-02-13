@@ -16,26 +16,30 @@ const CompanySchema = new Schema({
     type: String,
     required: true,
   },
+  companyServices: {
+    type: String,
+    required: true,
+  },
   image: {
     type: String,
     required: true,
   },
-  userRatings: [
+  userCompanyRatings: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "userRatings",
+      ref: "User",
     },
   ],
-  userReviews: [
+  userCompanyReviews: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "recipientCompany",
+      ref: "User",
     },
   ],
-  favCompanies: [
+  userfavCompany: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "userfavCompanies",
+      ref: "User",
     },
   ],
 });
