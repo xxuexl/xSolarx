@@ -29,7 +29,7 @@ const UserSchema = new mongoose.Schema(
 		},
 		rol: {
 			type: String,
-			enum: ["admin", "user", "company"],
+			enum: ["admin", "user"],
 			default: "user",
 		},
         password: {
@@ -52,7 +52,9 @@ const UserSchema = new mongoose.Schema(
 	
 		usersFollowed: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
 		usersFollowers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
-		
+		favCompany: [{ type: mongoose.Schema.Types.ObjectId, ref: "Company" }],
+		favNews: [{ type: mongoose.Schema.Types.ObjectId, ref: "News" }],
+		valuedReviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
 		
 	},
 	{
