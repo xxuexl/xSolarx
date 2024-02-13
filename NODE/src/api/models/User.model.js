@@ -1,12 +1,6 @@
 
 const UserSchema = new mongoose.Schema(
 	{
-        id:{
-            type: Number,
-			required: true,
-			unique: true,
-
-        },
         userName:{
             type:String,
             required:true,
@@ -56,10 +50,9 @@ const UserSchema = new mongoose.Schema(
 			default: false,
 		},
 	
-		favCompanies: [{ type: mongoose.Schema.Types.ObjectId, ref: "favCompanies" }],
-		usersFollowed: [{ type: mongoose.Schema.Types.ObjectId, ref: "usersFollowed" }],
-		usersFollows: [{ type: mongoose.Schema.Types.ObjectId, ref: "usersFollows" }],
-		valuedReviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+		usersFollowed: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+		usersFollowers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+		
 		
 	},
 	{
